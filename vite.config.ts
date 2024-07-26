@@ -91,5 +91,12 @@ export default defineConfig({
         },
       },
     },
+    minify: "terser", // use terser for better minification
+    terserOptions: {
+        compress: {
+            drop_console: true, // remove console logs
+            drop_debugger: true, // remove debugger statements
+        },
+    },
   },
 })
