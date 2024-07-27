@@ -91,7 +91,6 @@ function generateExportStatement(componentFiles) {
 function getComponentName(file) {
   return path
     .basename(file, '.tsx')
-    .split('-')
     .map(word => word.charAt(0).toUpperCase() + word.slice(1))
     .join('')
 }
