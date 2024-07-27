@@ -1,10 +1,15 @@
-import { Button } from '@/components/ui'
+import { LazyImage } from '@/components/ui'
+import { TransitionType } from '@/components/ui/lazy-image'
+import { getImages } from '@/lib/utils'
 
 export default function index() {
+  const images = getImages()
+
   return (
     <>
-      ini index
-      <Button>test</Button>
+      {images.slice(0, 16).map((src, i) => (
+        <LazyImage src={src} transition={TransitionType.Blur} key={i} className='h-100' alt='asd'   />
+      ))}
     </>
   )
 }
